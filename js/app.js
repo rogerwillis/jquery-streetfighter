@@ -1,4 +1,26 @@
 $(document).ready(function() {
+	
+	$(document).keydown(function(event){
+		if(event.keyCode == 88){
+			$('.ryu-ready, .ryu-still, .ryu-throwing').hide();
+			 $('.ryu-cool').show();
+			 $('.ryu-fan').show();
+			 
+			}
+		}).keyup(function(){
+			  //check to still if hovering over Ryu
+			  $('.ryu-fan').hide();
+			  if($('.ryu').is(':hover') === true)
+			  {
+				   $('.ryu-cool').hide();
+				   $('.ryu-ready').show();
+				   }
+				   else{ 
+				   $('.ryu-cool').hide();
+				   $('.ryu-still').show();}
+			});
+			
+			
 $('.ryu').mouseenter(function() {
     $('.ryu-still').hide();
     $('.ryu-ready').show();
@@ -21,6 +43,7 @@ $('.ryu').mouseenter(function() {
       $(this).css('left', '-212px');
     }
   );
+  $(".instructions-set-2").addClass('blue');
     // animate hadouken to the right of the screen
   })
   .mouseup(function() {
